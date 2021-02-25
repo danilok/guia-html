@@ -1,9 +1,9 @@
 # Guia Estelar de HTML da Rocketseat
 
 * Conceitos
-  1. [Abertura](#markdown-header-1-abertura)
-  2. [Instalando plugin de preview HTML](#markdown-header-2-instalando-plugin-de-preview-html)
-  3. O que é HTML
+  1. [Abertura](#1-abertura)
+  2. [Instalando plugin de preview HTML](#2-instalando-plugin-de-preview-html)
+  3. [O que é HTML](#3-o-que-é-html)
   4. Comentários
   5. Anatomia das Tags
   6. Atributos
@@ -73,3 +73,9 @@ Dicas para nomenclatura do arquivo:
   - Exemplo do que não fazer: `minha pagina.html`
   - Exemplo correto: `minha_pagina.html`
 
+## 3. O que é HTML
+HTML = Hypertext Markup Language ou linguage de marcação de hipertexto.
+
+Não é uma linguagem de programação e sim de marcação (por conta das tags). Tem sua própria sintaxe e semântica.
+
+O hipertexto se refere a elementos além do texto escrito, como links, imagens, etc o que enriquece o documento html.

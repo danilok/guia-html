@@ -1,8 +1,8 @@
 # Guia Estelar de HTML da Rocketseat
 
 * Conceitos
-  1. Abertura
-  2. Instalando plugin de preview HTML
+  1. [Abertura](#markdown-header-1-abertura)
+  2. [Instalando plugin de preview HTML](#markdown-header-2-instalando-plugin-de-preview-html)
   3. O que é HTML
   4. Comentários
   5. Anatomia das Tags
@@ -54,6 +54,22 @@
 
 -----------------------
 
-## Conceitos
-### 1. Abertura
+# Conceitos
+## 1. Abertura
 Vamos aprender nesse curso sobre o que é HTML.
+
+## 2. Instalando plugin de preview HTML
+Instalar a extensão do VS Code: html preview (Thomas Haakon Townsend)
+
+Ao utilizar essa extensão, as alterações são refletidas no preview e isso ajuda em tempo de desenvolvimento.
+
+Vamos criar nosso primeiro arquivo html que será chamado de `index.html`.
+
+Dicas para nomenclatura do arquivo:
+- Não usar acentuação como ã, é, õ, entre outros.
+- Evitar usar caracteres especiais como ç, @, #, %, entre outros
+- Usar extensão `.html`.
+- Não usar espaço no nome do arquivo, utilizar o `_`.
+  - Exemplo do que não fazer: `minha pagina.html`
+  - Exemplo correto: `minha_pagina.html`
+

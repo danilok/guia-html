@@ -54,10 +54,14 @@
 
 -----------------------
 
-# Conceitos
+<details open>
+<summary><strong>Conceitos</strong></summary>
+<br>
+
 ## 1. Abertura
 
 Vamos aprender nesse curso sobre o que é HTML.
+<br><br>
 
 ## 2. Instalando plugin de preview HTML
 
@@ -74,6 +78,7 @@ Dicas para nomenclatura do arquivo:
 - Não usar espaço no nome do arquivo, utilizar o `_`.
   - Exemplo do que não fazer: `minha pagina.html`
   - Exemplo correto: `minha_pagina.html`
+<br><br>
 
 ## 3. O que é HTML
 
@@ -82,6 +87,7 @@ HTML = Hypertext Markup Language ou linguage de marcação de hipertexto.
 Não é uma linguagem de programação e sim de marcação (por conta das tags). Tem sua própria sintaxe e semântica.
 
 O hipertexto se refere a elementos além do texto escrito, como links, imagens, etc o que enriquece o documento html.
+<br><br>
 
 ## 4. Comentários
 
@@ -96,6 +102,7 @@ Exemplo:
 Aqui vai um comentário que não aparecerá na página renderizada
 -->
 ```
+<br>
 
 ## 5. Anatomia das Tags
 
@@ -113,6 +120,7 @@ As tags no HTML em geral tem a seguinte anatomia:
     ```
 - Elementos vazio: Alguns elementos HTML não precisam ter conteúdo e não é necessário ter a tag de fechamento.
     - Exemplo: as tags `<input>` e `<img>`.
+<br><br>
 
 ## 6. Atributos
 
@@ -128,6 +136,7 @@ Exemplos:
   - `<a href="http://www.google.com">Link 3</a>`
 
 Atributos booleanos só necessitam ter o atributo na tag HTML para ter efeito. Exemplo: `<input disabled>`, neste caso, só de ter a presença do atributo `disabled` é o suficiente para desabilitar a tag `<input>`.
+<br><br>
 
 ## 7. Atributos globais
 Todas as tags possuem atributos globais em comum, entre eles:
@@ -141,6 +150,7 @@ Todas as tags possuem atributos globais em comum, entre eles:
   - title
 
 Para mais atributos globais, é possível encontrá-los no seguinte [link][1].
+<br><br>
 
 ## 8. Aninhamento Hierarquia
 
@@ -149,7 +159,8 @@ Alguns aspectos com relação ao aninhamento de tags que são importantes saber:
 - Fluxo
 - Posicionamento dos elementos
 
-<br><br>
+<br>
+
 Com relação a hierarquia, as tags podem ser aninhadas, ou seja, uma tag estar dentro de outra, tendo uma relação de tag pai e tag filha.
 ```
 <div>
@@ -253,12 +264,12 @@ Estes 3 aspectos são bem importantes para entender como os elementos serão exi
 <br><br>
 ## 9. Praticando
 
-Execício para escrever 2 parágrafos, dando ênfase e importância para algumas palavras. Ao final, adicional um link de saiba mais:
+Execício para escrever 2 parágrafos, dando ênfase e importância para algumas palavras. Ao final, adicione um link de saiba mais.
 
 Requisitos:
 - use a tag `em` para ênfase
 - use a tag `string` para importância
-- o link pode vear para o google
+- o link pode ser para o google
 
 <details>
   <summary>Sugestão</summary>
@@ -329,12 +340,16 @@ Utilizando o emmet `!` do VS Code, é criado um template básico de um documento
 </html>
 ```
 Com isso, temos um básico para começar a criar páginas HTML.
+<br><br>
 
 ## 12. Criando Projetos
 
 Para iniciar um projeto, bastar criar um arquivo `index.html` em qualquer diretório do seu computador (onde você tenha permissão para alterar, como a pasta Documentos).
 
 Para desenvolver uma página HTML é necessário apenas um editor de texto, que pode ser qualquer um, até mesmo o bloco de notas do Windows. Para projetos maiores que necessitam de controle de versão e outros utilitários, uma recomendação é utilizar o [VS Code][2], um editor gratuito.
+****
+</details>
+<br>
 
 [1]: https://developer.mozilla.org/pt-BR/docs/Web/HTML/Global_attributes
 [2]: https://code.visualstudio.com

@@ -9,10 +9,10 @@
   6. [Atributos](#6-atributos)
   7. [Atributos Globais](#7-atributos-globais)
   8. [Aninhamento Hierarquia](#8-aninhamento-hierarquia)
-  9. Praticando
-  10. Caracteres Reservados
-  11. Anatomia Documento
-  12. Criando Projetos
+  9. [Praticando](#9-praticando)
+  10. [Caracteres Reservados](#10-caracteres-reservados)
+  11. [Anatomia Documento](#11-anatomia-documento)
+  12. [Criando Projetos](#12-criando-projetos)
 
 
 * Trabalhando com Elementos
@@ -250,5 +250,91 @@ outro parágrafo
 A saída terá uma quebra de linha, mas atente-se que não foi gerado um novo parágrafo  ou bloco de texto, é apenas uma quebra de linha.
 <br><br>
 Estes 3 aspectos são bem importantes para entender como os elementos serão exibidos, qual a relação entre eles e em que ordem serão renderizados.
+<br><br>
+## 9. Praticando
+
+Execício para escrever 2 parágrafos, dando ênfase e importância para algumas palavras. Ao final, adicional um link de saiba mais:
+
+Requisitos:
+- use a tag `em` para ênfase
+- use a tag `string` para importância
+- o link pode vear para o google
+
+<details>
+  <summary>Sugestão</summary>
+  <p>
+
+    <p>Olá, esse é o resultado da prática, pois a <em>prática leva a perfeição</em>!!</p>
+
+    <p>Você sabe como alcançar o próximo nível? <strong>É praticando!!</strong></p>
+
+    <a href="http://www.google.com">Saiba mais, clicando aqui</a>
+
+  </p>
+</details>
+<br><br>
+
+## 10. Caracteres Reservados
+
+Alguns símbolos especiais são caracteres reservados na linguagem HTML e eles podem ser interpretados de forma que você não espera e gerar alguns problema na visualizar a sua página.
+
+Exemplos desses caracteres reservados são: `<`, `>`, `"`, `'`. 
+
+Um motivo bem óbvio é que esses caracteres fazem parte das tags HTML.
+
+Caso deseje utilizar alguns deles dentro de um conteúdo de texto é necessário trocá-los por códigos específicos que são interpretados pelo HTML, como por exemplo:
+- `<` - `&lt;`
+- `>` - `&gt;`
+- `"` - `&quot;`
+- `'` - `&apos;`
+- `&` - `&amp;`
+<br><br>
+
+## 11. Anatomia Documento
+
+Até agora vimos vários conceitos que são necessários para começar a criar um documento HTML, porém ainda não sabemos qual a estrutura básica de um documento HTML.
+
+Todo documento HTML começa com a tag `<html>` que é a tag raiz. Podemos ter uma marcação para o HTML5 que é o `<!DOCTYPE html>` antes da tag principal do documento.
+
+Existem duas tags filhas principais do `html` que são: `head` e `body`.
+
+A tag `<head>` é responsável por conter diversas tags com configurações da página, como título, charset, estilos, scripts, metadados diversos, entre outros.
+
+A tag `<body>` é onde estarão as tags de conteúdo da página que o usuário visualizará como textos, tabelas, imagens, links, entre outros.
+
+Um documentos simples e básico pode ser descrito da seguinte forma:
+```
+<!DOCTYPE html>
+<html>
+  <head>
+  </head>
+  <body>
+  </body>
+</html>
+```
+
+Utilizando o emmet `!` do VS Code, é criado um template básico de um documento HTML.
+```
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  
+</body>
+</html>
+```
+Com isso, temos um básico para começar a criar páginas HTML.
+
+## 12. Criando Projetos
+
+Para iniciar um projeto, bastar criar um arquivo `index.html` em qualquer diretório do seu computador (onde você tenha permissão para alterar, como a pasta Documentos).
+
+Para desenvolver uma página HTML é necessário apenas um editor de texto, que pode ser qualquer um, até mesmo o bloco de notas do Windows. Para projetos maiores que necessitam de controle de versão e outros utilitários, uma recomendação é utilizar o [VS Code][2], um editor gratuito.
 
 [1]: https://developer.mozilla.org/pt-BR/docs/Web/HTML/Global_attributes
+[2]: https://code.visualstudio.com

@@ -27,14 +27,14 @@
   9. [Elementos Genéricos](#9-elementos-genéricos)
 
 * Links
-  1. Conhecendo a tag âncora
-  2. Utilizando a tag âncora
-  3. Conteúdos dentro de elemento a
-  4. Caminhos e URLS
-  5. Como navegar pelos diretórios
-  6. Caminhos absolutos vs relativos
-  7. Exercício de apresentação
-  8. Exercício de resolução
+  1. [Conhecendo a tag âncora](#1-conhecendo-a-tag-âncora)
+  2. [Utilizando a tag âncora](#2-utilizando-a-tag-âncora)
+  3. [Conteúdos dentro do elemento a](#3-conteúdos-dentro-do-elemento-a)
+  4. [Caminhos e URLS](#4-caminhos-e-urls)
+  5. [Como navegar pelos diretórios](#5-como-navegar-pelos-diretórios)
+  6. [Caminhos absolutos vs relativos](#6-caminhos-absolutos-vs-relativos)
+  7. [Apresentação do exercício](#7-apresentação-do-exercício)
+  8. [Resolução do exercício](#8-resolução-do-exercício)
 
 * Tabelas
   1. Tabela básica
@@ -632,8 +632,179 @@ qualquer
 O que ficou dentro do `<div>` ficou renderizado em linha, mas está em um bloco diferente do que está fora da mesma tag.
 
 Estas duas tags são bem utilizadas pois permitem customizar cada uma das tags com os atributos globais como `id`, `class`. São fundamentais para criação de páginas utilizando Javascript e CSS.
-
+***
 </details>
+
+<details open>
+  <summary>Links</summary>
+<br>
+
+## 1. Conhecendo a tag âncora
+A tag `<a>` (_anchor_) é uma das principais tags do HTML, ela que possibilita o _link_ entre os documentos. A partir do _link_ de um documento, você pode navegar para outro com um clique.
+
+Esta tag tem uma série de atributos que são comumente utilizados, alguns dos principais são:
+- `href`
+- `download`
+- `target`
+
+O atributo `href` (_hyperlink reference_) é o principal atributo da tag `<a>` e este atributo pode ter diversas funções como:
+- Apontar para outro documento HTML
+- Apontar para um fragmento no mesmo documento HTML
+- Enviar um email
+- Iniciar uma chamada telefônica (dependendo da plataforma)
+- Outras funções
+
+O atributo `download` informa que deverá ser realizado o download do que está sendo referenciado no atributo `href`. O valor desta tag é o nome padrão do arquivo que será baixado.
+
+O atributo `target` informa onde deve ser disponibilizado o conteúdo da âncora, o valor padrão deste atributo (quando não informado) é o `_self`.
+- `_self` indica que o conteúdo deverá ser aberto na mesma aba
+- `_blank` indica que o conteúdo deverá ser aberto em uma nova aba 
+<br><br>
+
+## 2. Utilizando a tag âncora
+
+Para detalhar melhor o atributo `href`, ele pode receber diversos valores e alguns com funções bem específicas.
+
+A utilização mais comum é apontar para outro documento HTML. E o valor pode ser uma URL completa ou utilizar um caminho relativo para o documento. Quando o atributo `href` estiver vazio, a referência é o próprio documento.
+
+Ao utilizar o prefixo `mailto:` podemos em seguida informar um e-mail e ao clicar no link o gerenciador de e-mails abrirá e permitirá o envio para o endereço configurado na tag.
+
+Ao utilizar o prefixo `tel:` seguido do número de um telefone, é possível iniciar uma ligação telefônica. Isso depende da plataforma. Geralmente é melhor utilizado no caso de abrir a página em um smartphone.
+
+Para exemplificar os usos desta tag:
+```
+<ul>
+  <li><a href="">Homepage</a></li>
+  <li><a href="https://www.google.com">Google</a></li>
+  <li><a href="mailto:daniloksy@gmail.com">Email</a></li>
+  <li><a href="tel:+5541999999999">Telefone</a></li>
+</ul>
+```
+
+Outra utilização possível é apontar para um fragmento de uma página, por exemplo, um título, uma imagem. O prefixo utilizado para este caso é o `#`. Qualquer outro elemento dentro da página que contenha o `id` especificado com o prefixo `#` será exibido ao clicar no link.
+```
+<ul>
+  <li><a href="">Homepage</a></li>
+  <li><a href="#secao1">Seção 1</a></li>
+  <li><a href="#secao2">Seção 2</a></li>
+  <li><a href="#secao3">Seção 3</a></li>
+</ul>
+
+<h2 id="secao1">Seção 1</h2>
+<h2 id="secao2">Seção 2</h2>
+<h2 id="secao3">Seção 3</h2>
+```
+No exemplo acima, ao clicar no link da Seção 1, iremos direto pro título com `id` igual a `secao1`.
+
+Para documentos com um índice, este recurso de link apontando para um fragmento de página é comumente utilizado.
+<br><br>
+
+## 3. Conteúdos dentro do elemento a
+Dentro da tag `<a>` é possível utilizar outras tags, como `<h1>`, `<img>`, não apenas um texto puro. Podemos até mesmo utilizar mais de uma tag dentro da tag `<a>`.
+```
+<a href="https://www.google.com"><h1>Google</h1></a>
+<a href="https://www.google.com"><img src="https://www.google.com.br/images/branding/googlelogo/2x/googlelogo_color_160x56dp.png" alt="google"></img></a>
+
+<a href="https://www.google.com">
+  <h1>Google</h1>
+  <img src="https://www.google.com.br/images/branding/googlelogo/2x/googlelogo_color_160x56dp.png" alt="google"></img>
+  <p> Vamos para o google?
+</a>
+```
+<br>
+
+## 4. Caminhos e URLS
+
+Um link utiliza uma URL (_Uniform Resource Locator_) para saber a localização de um recurso para ser exibido ou baixado ao ser clicado. Uma URL é uma string que define onde algo está localizado na web. O recurso pode estar dentro do próprio projeto ou em algum lugar externo.
+
+Caso o recurso esteja dentro do próprio projeto, usa-se o caminho do arquivo para acessá-lo. Exemplo: `caminho-para-arquivo/arquivo.html`.
+
+Caso o recurso não esteja dentro do próprio projeto, é necessário informar a URL completa para poder acessá-lo. Exemplo: `http://www.facebook.com`.
+<br><br>
+
+## 5. Como navegar pelos diretórios
+
+Para informar a localização exata de um recurso dentro de um projeto é necessário informar o caminho para este recurso e não é necessário que o recurso esteja no mesmo diretório da página que está sendo exibida.
+
+Para informar o caminho do arquivo ao navegador, usamos a seguinte notação:
+- recurso no mesmo diretório: sem prefixo `nome-recurso` ou com prefixo `./nome-recurso`
+- arquivo em diretório dentro do diretório atual: `<nome_dir>/nome-recurso`
+- arquivo em diretórior anterior ao diretório atual: `../<nome_dir>/nome-recurso`
+
+Claro que podemos ter encadeamento dessas notações para poder informar a localização exata de um arquivo como:
+- `../src/app/component/index.html`
+- `../../../assets/file.png`
+- `../../app/components/item-detail/controller.ts`
+
+É importante conhecer esta notação para conseguir informar o caminho de um recurso, caso contrário, ao tentar acessá-lo informando o caminho incorreto, será exibida uma mensagem de erro 404 para o usuário.
+<br><br>
+
+
+## 6. Caminhos absolutos vs relativos
+
+Temos que diferenciar o que é caminho absoluto de caminho relativo:
+- Caminho absoluto é aquele onde informados a URL completa para acessar determinado recurso, com protoloco e nome do domínio. Sempre apontará para o mesmo local não importa em que lugar dentro do projeto ele esteja sendo referenciado.
+- Caminho relativo é o caminho relativo ao recurso atual, ou seja, posso ter mesma referência em diversas páginas dentro de um projeto, mas cada página pode abrir um recurso diferente.
+<br><br>
+
+## 7. Apresentação do exercício
+
+Para testar os conhecimentos obtidos até agora, faça o seguinte exercício:
+
+### **Criando naveção entre arquivos**
+- Crie um projeto contendo
+  - 2 arquivos no diretório principal (`index.html` e `contact.html`)
+  - 1 diretório de nome: `files`
+    - dentro desse diretório, adicione 2 imagens da sua preferência e 1 arquivo de nome  `image.html`, que listará as imagens.
+<br><br>
+
+### **Dentro de cada arquivo .html, você deverá colocar:**
+1. Título `<h1>` da página
+2. Menu de navegação com uma lista `<li>` não ordenada `<ul>`.
+3. Um ou mais parágrafos `<p>` com informações da página.
+<br><br>
+
+### **A navegação**
+Para o menu de navegação, use a tag `<nav>` e coloque a lista não ordenada como conteúdo da tag.
+
+O conteúdo de cada item da lista `<li>` deverá conter um link `<a>`.
+
+O conteúdo do link deverá ser o nome da página .html que existe no projeto, sendo que para cada página, iremos ter um link.
+
+Ao clicar no link, deveremos ser direcionados à página clicada.
+<br><br>
+
+### **Página images.html**
+
+Como conteúdo desta página, além do que foi pedido, adicionar também:
+1. As duas imagens que você tem na pasta
+2. Use a tag `<p>` para colocar a tag `<img>`
+
+*obs:* imagens de tamanho muito grande poderão não se adaptar bem, mas não se preocupe com isso agora, pois logo aprenderemos como melhorar isso.
+<br><br>
+
+### **Página contact.html**
+
+Como conteúdo desta página, além do que foi perdido, adicionar também:
+1. Colocar suas informações de contato: email e telefone
+2. Cada informação deverá estar dentro de um link que quando clicado, abrirá a respectiva informação de contato (email ou telefone)
+<br><br>
+
+### **Dicas**
+
+Para o conteúdo da tag `<p>`, se desejar, poderá fazer uso do atalho `lorem` que existe no VS Code.<br>
+Para isso, digite `lorem` e em seguida aperte tab.<br>
+Atenção: em alguns computadores isso pode não funcionar, portanto, não se atenhe a isso e continue o exercício sem essa dica.
+<br><br>
+
+## 8. Resolução do exercício
+
+Resolvido na pasta `exercicio_links` deste repositório.
+
+
+  ***
+</details>
+
 
 
 [1]: https://developer.mozilla.org/pt-BR/docs/Web/HTML/Global_attributes

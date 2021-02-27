@@ -16,15 +16,15 @@
 
 
 * Trabalhando com Elementos
-  1. Semântica
-  2. Títulos e Parágrafos
-  3. Listas
-  4. Citações
-  5. Abreviações
-  6. Detalhes de contato
-  7. Lista de descrição
-  8. Representação de código
-  9. Elementos Genéricos
+  1. [Semântica](#1-semântica)
+  2. [Títulos e Parágrafos](#2-títulos-e-cabeçalhos)
+  3. [Listas](#3-listas)
+  4. [Citações](#4-citações)
+  5. [Abreviações](#5-abreviações)
+  6. [Detalhes de contato](#6-detalhes-de-contato)
+  7. [Lista de descrição](#7-lista-de-descrição)
+  8. [Representação de código](#8-representação-de-código)
+  9. [Elementos Genéricos](#9-elementos-genéricos)
 
 * Links
   1. Conhecendo a tag âncora
@@ -350,6 +350,291 @@ Para desenvolver uma página HTML é necessário apenas um editor de texto, que 
 ****
 </details>
 <br>
+
+<details open>
+<summary><strong>Trabalhando com Elementos</strong></summary>
+<br>
+
+## 1. Semântica
+
+A função da semântica é dar significado aos elementos HTML utilizados no documento. Para tornar o documento mais semântico é necessário utilizar elementos semânticos. 
+
+A linguagem HTML fornece vários elementos semânticos que possibilitam tornar um documento HTML mais fácil de ser consumido tanto por humanos quantos pelos robôs dos motores de busca. 
+
+Ao começar a escrever um documento HTML é interessante pensar em como estruturá-lo de forma que cada elemento seja apresentado de forma que fique mais fácil de ser interpretado. Por exemplo, destacar os tópicos com tags de cabeçalho (`<h1>`, `<h2>`...), apresentar listas com elementos ordenados ou sem ordem, citações, blocos de código  e também temos alguns elementos genéricos que podem ser utilizados para melhorar a semântica.
+
+<br>
+
+## 2. Títulos e cabeçalhos
+
+Tags de título são `<h1>`, `<h2>`, `<h3>`, até `<h6>` e tag de parágrafo `<p>`.
+
+Para um leitor, faz diferença em como um texto é apresentado. Se é uma tripa de letras ou está bem formatado. As tags acima podem ser utilizadas para deixar mais legível um texto.
+
+Exemplo de um texto sem elementos semânticos:
+```
+Título
+primeiro parágrafo
+subtítulo
+segundo parágrafo
+```
+
+Saída em HTML:
+<blockquote>
+Título
+primeiro parágrafo
+subtítulo
+segundo parágrafo
+</blockquote>
+<br>
+Exemplo de texto com elementos semânticos:
+
+```
+<h1>Título</h1>
+<p>primeiro parágrafo</p>
+<h2subtítulo</h2>
+<p>segundo parágrafo</p>
+```
+
+Saída em HTML:
+<blockquote>
+<h1>Título</h1>
+<p>primeiro parágrafo</p>
+<h2>subtítulo</h2>
+<p>segundo parágrafo</p>
+</blockquote>
+
+Veja que há uma boa diferença e isso facilita o leitor a interpretar o que é um título e o que é um parágrafo.
+
+<br>
+As tags de cabeçalho tem uma diferença visual que ajudam a destacar o texto.
+
+<blockquote>
+<h1>h1</h1>
+<h2>h2</h2>
+<h3>h3</h3>
+<h4>h4</h4>
+<h5>h5</h5>
+<h6>h6</h6>
+</blockquote>
+<br>
+
+## 3. Listas
+
+Temos dois tipos de listas que podem ser usados: lista ordenada e lista não-ordenada.
+
+As listas ordenadas terão um número antes de cada item e devem ser usadas quando a ordem é um fator importante da informação, por exemplo, uma sequência de passos de um algoritmo. Usamos a tag `<ol>` (ordered list).
+
+As listas não-ordenadas terão apenas um marcador antes de cada item e devem ser utilizadas quando a ordem dos itens não tem relevância, como em uma lista de ingredientes de um bolo, onde todos os ingredientes são necessários para fazer a receita. Usamos a tag `<ul>` (unordered list).
+
+Cada item da lista é representado pela tag `<li>` (list item), para os dois tipos de lista.
+
+```
+<h2>Ingredientes</h2>
+<ul>
+  <li>Ovo</li>
+  <li>Sal</li>
+  <li>Óleo</li>
+</ul>
+
+<h2>Instruções</h2>
+<ol>
+  <li>Pegue uma frigideira e jogue um pouco de óleo em fogo baixo</li>
+  <li>Quebre o ovo e jogue na frigideira</li>
+  <li>Deixe o ovo fritar e retire antes que queime</li>
+  <li>Tempere com sal a gosto</li>
+</ol>
+```
+
+Saída em HTML:
+
+<h2>Ingredientes</h2>
+<ul>
+  <li>Ovo</li>
+  <li>Sal</li>
+  <li>Óleo</li>
+</ul>
+
+<h2>Instruções</h2>
+<ol>
+  <li>Pegue uma frigideira e jogue um pouco de óleo em fogo baixo</li>
+  <li>Quebre o ovo e jogue na frigideira</li>
+  <li>Deixe o ovo fritar e retire antes que queime</li>
+  <li>Tempere com sal a gosto</li>
+</ol>
+<br>
+
+## 4. Citações
+
+Temos as seguintes opções para fazer citações:
+ - `<blockquote>`
+ - `<cite>`
+ - `<q>`
+
+ ```
+ <blockquote cite="https://developer.mozilla.org/pt-BR/docs/Web/HTML/Element/blockquote">
+  O <strong>Elemento HTML <code>&lt;blockquote&gt;</code></strong> (ou <em>HTML Block Quotation Element</em>) indica que um texto externo foi citado.
+ </blockquote>
+
+ <p>De acordo com <a href="https://developer.mozilla.org/pt-BR/docs/Web/HTML/Element/blockquote">
+  <cite>página MDN blockquote</cite></a>:
+ </p>
+
+ <p>O elemento quote - <code>&lt;q&gt;</code> - é <q cite="https://developer.mozilla.org/pt-BR/docs/Web/HTML/Element/q">usado para citações curtas que não precisam de parágrafos ou quebras de linha.</q> -- <a href="https://developer.mozilla.org/pt-BR/docs/Web/HTML/Element/q"><cite>MDN q page</cite></a>.</p>
+
+ ```
+<br>
+
+## 5. Abreviações
+
+A tag `<abbr>` (_abbreviation_) é usada para abreviações, esta tag coloca um estilo diferenciado em seu conteúdo para informar ao usuário que ela é uma abreviação e descansando o mouse em cima dela, é possível ver o atributo `title` da tag.
+
+```
+<p>Usamos <abbr title="Hypertext Markup Language">HTML</abbr> para estruturar nossos documentos web.</p>
+```
+<br>
+
+## 6. Detalhes de contato
+A tag `<address>` é utilizada para detalhes de contato de quem criou a página. Não serve para informar um endereço qualquer.
+<br><br>
+
+```
+<address>
+  <p>Danilo Yorinori<br>
+  <strong>Curitiba - PR</strong>
+</address>
+```
+
+Esta tag tem mais um significado semântico do que visual.
+<br><br>
+
+## 7. Lista de descrição
+
+A tag `<dl>` (_description list_) é usada para uma lista de descrição, como um glossário.
+As tags filhas são `<dt>` (_description term_) para os termos e `<dd>` (_description detail_) para a explicação do termo.
+
+```
+<dl>
+  <dt>Description term</dt>
+  <dd>Description detail</dd>
+</dl>
+```
+
+A lista de descrição tem uma formatação bem específica como podemos ver a seguir:
+<blockquote>
+  <dl>
+    <dt>Description term</dt>
+    <dd>Description detail</dd>
+  </dl>
+</blockquote>
+<br>
+
+## 8. Representação de código
+
+Temos duas tags para representar código no HTML:
+ - `<code>`
+ - `<pre>`
+
+A tag `<code>` é utilizada para trechos simples de código, partes genéricas ou apenas para destacar algum termo no texto.
+
+Quando for necessário exibir um trecho de código onde identação e várias linhas de código são relevantes, é melhor utilizar a tag `<pre>`.
+<br><br>
+
+Exemplos:
+```
+<code>document.querySelector("body")</code>
+```
+<blockquote>
+Código simples<br>
+<code>document.querySelector("body")</code>
+</blockquote>
+<br>
+
+```
+<code>
+document
+  .querySelector("body")
+</code>
+```
+<blockquote>
+Código com quebra de linha<br>
+<code>
+document
+  .querySelector("body")
+</code>
+</blockquote>
+<br>
+
+```
+<code>
+<pre>
+document
+  .querySelector("body"
+</pre>
+</code>
+```
+<blockquote>
+Código com quebra de linha
+<code>
+<pre>
+document
+  .querySelector("body"
+</pre>
+</code>
+</blockquote>
+Pelos exemplos observamos que quando é necessário mostrar um trecho de código grande de código, é usar uma combinação das duas tags.
+
+Um detalhe importante é que caso seja necessário exibir um código HTML dentro de um documento HTML, é necessário usar os caracteres especiais (`&gt;`, `&lt;`), caso contrário o HTML pode ser renderizado com alguns problemas.
+
+Por questão de curiosidade mas que deve ser evitada é a utilização da tag `<xmp>`, dentro desta tag não é necessário traduzir os símbolos reservados do HTML.
+
+
+```
+<xmp>
+<pre>
+  <code>
+document
+  .querySelector("body")
+  </code>
+</pre>
+</xmp>
+```
+<br>
+
+## 9. Elementos genéricos
+
+Temos dois elementos genéricos que podem ser utilizados e são bem utilizados em desenvolvimentos que são as tags:
+- `<div>`
+- `<span>`
+
+A tag `<div>` (_division_) é utilizada para agrupar conteúdo e traz uma ideia de bloco.
+
+A tag `<span>` é utilizada para agrupar texto e será renderizada em linha.
+
+```
+<div>
+  texto qualquer
+  <span>com outro</span>
+</div>
+<span>texto</span>
+qualquer
+```
+
+<blockquote>
+<div>
+  texto qualquer
+  <span>com outro</span>
+</div>
+<span>texto</span>
+qualquer
+</blockquote>
+
+O que ficou dentro do `<div>` ficou renderizado em linha, mas está em um bloco diferente do que está fora da mesma tag.
+
+Estas duas tags são bem utilizadas pois permitem customizar cada uma das tags com os atributos globais como `id`, `class`. São fundamentais para criação de páginas utilizando Javascript e CSS.
+
+</details>
+
 
 [1]: https://developer.mozilla.org/pt-BR/docs/Web/HTML/Global_attributes
 [2]: https://code.visualstudio.com

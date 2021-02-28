@@ -37,13 +37,14 @@
   8. [Resolução do exercício](#8-resolução-do-exercício)
 
 * Tabelas
-  1. Tabela básica
-  2. Organizando Tabelas
-  3. Tabela complexa
-  4. THead complexa
-  5. TBody complexo
-  6. Melhorando o aspecto com colgroup
-  7. Melhorando acessibilidade
+  1. [Tabelas](#1-tabelas)
+  2. [Tabela básica](#2-tabela-básica)
+  3. [Organizando Tabelas](#3-organizando-tabelas)
+  4. [Tabela complexa](#4-tabela-complexa)
+  5. [THead complexo](#5-thead-complexo)
+  6. [TBody complexo](#6-tbody-complexo)
+  7. [Melhorando o aspecto com colgroup](#7-melhorando-o-aspecto-com-colgroup)
+  8. [Melhorando acessibilidade](#8-Melhorando-acessibilidade)
 
 * Cabeçalho
   1. Head
@@ -801,11 +802,353 @@ Atenção: em alguns computadores isso pode não funcionar, portanto, não se at
 
 Resolvido na pasta `exercicio_links` deste repositório.
 
-
   ***
 </details>
+<br>
+
+<details open>
+<summary>Tabelas</summary>
+<br>
+
+## 1. Tabelas
+
+O elemento `<table>` é importante para organizar os dados para uma melhor visualização pois ele pode estruturar os dados em linhas e colunas.
+
+As vantagens de utilizar uma tabela é que ela provê uma melhor visualização das informações via linhas e colunas. Tem uma boa acessibilidade para leitura dos dados.
+
+Algumas desvantagens são a pouca flexibidade e a necessidade de uma estilização para melhorar a visualização dos dados (a organização em linhas e colunas de forma simples pode não ser o suficiente).
+
+Não deve-se usar tabelas para criar layouts (elas já foram utilizadas antigamente para construir layouts mas hoje em dia existem outras técnicas muito melhores e mais flexíveis).
+<br><br>
+
+## 2. Tabela básica
+
+Para criar uma tabela simples, precisamos das seguintes tags:
+- `<tr>` - Indica a criação de uma linha da tabela (_table row_)
+- `<th>` - Indica uma coluna de cabeçalho (_table header_)
+- `<td>` - Indica o dado, valor, descrição de uma coluna (_table data_)
+
+Com essas tags, um exemplo simples de tabela seria:
+```
+<table>
+  <tr>
+    <th>Editora</th>
+    <th>Super-herói</th>
+  </tr>
+  <tr>
+    <td>DC</td>
+    <td>Superman</td>
+  </tr>
+  <tr>
+    <td>Marvel</td>
+    <td>Homem-aranha</td>
+  </tr>  
+</table>
+```
+
+O código acima gerará uma tabela similar a seguinte:
+Editora | Super-herói
+--------|------------
+DC      | Superman
+Marvel  | Homem-aranha
+
+<br><br>
 
 
+## 3. Organizando Tabelas
+
+Para deixar nossa tabela ainda mais organizada e semântica, vamos utilizar mais algumas tags:
+- `<thead>` - Organiza o conteúdo de cabeçalho da tabela 
+- `<tbody>` - Organiza o conteúdo do corpo da tabela
+- `<tfoot>` - Organiza o conteúdo do rodapé da tabela
+- `<caption>` - Descreve o título da tabela 
+
+```
+<table>
+
+  <caption>
+    Tabela de editora x super-herói
+  </caption>
+
+  <thead>
+    <tr>
+      <th>Editora</th>
+      <th>Super-herói</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>DC</td>
+      <td>Superman</td>
+    </tr>
+    <tr>
+      <td>Marvel</td>
+      <td>Homem-aranha</td>
+    </tr>  
+  </tbody>
+    <tr>
+      <td>Total:</td>
+      <td>2 super-heróis</td>
+    </tr>    
+  <tfoot>
+  </tfoot>
+</table>
+```
+
+O código acima gerará uma tabela similar a seguinte:
+
+<caption>
+  Tabela de editora x super-herói
+</caption>
+
+Editora | Super-herói
+--------|------------
+DC      | Superman
+Marvel  | Homem-aranha
+Total   | 2 super-heróis
+
+<br><br>
+
+## 4. Tabela complexa
+
+Para exemplificar uma tabela complexa, vamos partir de um exemplo que á construção de uma tabela de 2 lojas com a relação de produtos produzidos e vendidos, onde a linha abaixo da coluna com o nome da loja deve ter duas colunas com os produtos produzidos e vendidos.
+
+A tabela deve ficar como o exemplo a seguir:
+```
+|          |         loja 1          |           loja 2         |
+|          | produzidos | vendidos   |  produzidos | vendidos   |
+-----------------------------------------------------------------
+| prod1    |    qtd     |     qtd    |      qtd    |   qtd      |
+| prod2    |    qtd     |     qtd    |      qtd    |   qtd      |
+-----------------------------------------------------------------
+```
+
+<br>
+
+## 5. THead complexo
+
+Por passos, vamos criar nosso cabeçalho.
+
+Definir a tabela e uma caption:
+```
+<table>
+  <caption>Produzidos e vendidos por loja</caption>
+</table>
+``` 
+
+Primeira linha do cabeçalho com o nome das lojas:
+```
+<table>
+  <caption>Produzidos e vendidos por loja</caption>
+  <thead>
+    <tr>
+      <th></th>
+      <th>Loja 1</th>
+      <th>Loja 2</th>
+    </tr>
+  </thead>
+</table>
+``` 
+
+Segunda linha do cabeçaho:
+```
+<thead>
+  <tr>
+    <th></th>
+    <th>Loja 1</th>
+    <th>Loja 2</th>
+  </tr>
+  <tr>
+    <th>Produzidos</th>
+    <th>Vendidos</th>
+    <th>Produzidos</th>
+    <th>Vendidos</th>    
+  </tr>
+</thead>
+``` 
+<br>
+
+Após adicionar a segunda linha, vemos que a tabela não está ficando do jeito que queremos.
+```
+|            | loja 1   | loja 2     |
+| produzidos | vendidos | produzidos | vendidos |
+```
+
+Precisamos fazer com que a primeira coluna da primeira linha, ocupe tanto a primeira coluna da primeira linha como a segunda linha também. Para isso podemos usar o atributo `rowspan`. Esse atributo informa quantas linhas uma coluna deve ocupar.
+```
+<tr>
+  <th rowspan="2"></th>
+  <th>Loja 1</th>
+  <th>Loja 2</th>
+</tr>
+```
+
+Ao adicionar o `rowspan`, a tabela deve ficar da seguinte forma:
+```
+|            |   loja 1   | loja 2   |
+|            | produzidos | vendidos | produzidos | vendidos |
+```
+
+Ainda não está do jeito que queremos. Agora é necessário fazer as colunas com nome das lojas ocuparem 2 colunas cada usando o atributo `colspan`.
+```
+<tr>
+  <th rowspan="2"></th>
+  <th colspan="2">Loja 1</th>
+  <th colspan="2">Loja 2</th>
+</tr>
+```
+
+Agora o resultado estará assim:
+```
+|            |         loja 1        |        loja 2         |
+|            | produzidos | vendidos | produzidos | vendidos |
+```
+<br>
+
+## 5. TBody complexo
+
+Para adicionar as linhas com informações dos produtos, podemos usar a tag `<tbody>`.
+```
+<tbody>
+  <tr>
+    <th>Produto 1</th>
+    <td>50</td>
+    <td>40</td>
+    <td>30</td>
+    <td>30</td>
+  </tr>
+  <tr>
+    <th>Produto 2</th>
+    <td>10</td>
+    <td>10</td>
+    <td>25</td>
+    <td>20</td>
+  </tr>
+</tbody>
+```
+
+Usamos a tag `<th>` no corpo da tabela para destacar que uma coluna também contém uma informação chave.
+
+Teremos algo assim no momento:
+<blockquote>
+  <table>
+    <caption>Produzidos e vendidos por loja</caption>
+    <thead>
+      <tr>
+        <tr>
+          <th rowspan="2"></th>
+          <th colspan="2">Loja 1</th>
+          <th colspan="2">Loja 2</th>
+        </tr>
+      </tr>
+      <tr>
+        <th>Produzidos</th>
+        <th>Vendidos</th>
+        <th>Produzidos</th>
+        <th>Vendidos</th>    
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <th>Produto 1</th>
+        <td>50</td>
+        <td>40</td>
+        <td>30</td>
+        <td>30</td>
+      </tr>
+      <tr>
+        <th>Produto 2</th>
+        <td>10</td>
+        <td>10</td>
+        <td>25</td>
+        <td>20</td>
+      </tr>
+    </tbody>
+  </table>
+</blockquote>
+<br>
+
+## 7. Melhorando o aspecto com colgroup
+
+A tabela está organizada, mostrando os dados conforme o pedido, porém podemos deixar a informação ainda mais visívl estilizando as colunas. Para esta necessidade, podemos utilizar a tag `<colgroup>` que deve ficar após a tag `<caption>` e antes da tag `<thead>`.
+
+Na tabela temos 3 grandes colunas principais apesar de na realidade termos 5 colunas. Para deixar ainda mais claro as informações de cada loja, pode-se estilizar as colunas de cada loja.
+
+```
+...
+<caption>Produzidos e vendidos por loja</caption>
+
+<colgroup>
+  <col>
+  <col style="background-color: red">
+  <col style="background-color: blue">
+</colgroup>
+
+<thead>
+...
+```
+
+Ao fazer isso, a tabela não vai ficar do jeito esperado, pois a segunda e terceira foram estilizadas e a intenção era colorir a segunda e terceira com a cor vermelha e a quarta e quinta com azul.
+
+Pode-se repetir a estilização para fica do jeito que desejado.
+```
+<colgroup>
+  <col>
+  <col style="background-color: red">
+  <col style="background-color: red">
+  <col style="background-color: blue">
+  <col style="background-color: blue">
+</colgroup>
+```
+
+Mas há uma alternativa sem precisar repetir linhas de códigos, que no caso é fazer o `span` das estilizações para mais colunas. Diferentemente da tag `<th>`, não temos um atributo `colspan`, mas sim apenas `span` pois já estamos tratando com colunas no `colgroup`.
+```
+<colgroup>
+  <col>
+  <col span="2" style="background-color: red">
+  <col span="2" style="background-color: blue">
+</colgroup>
+```
+<br>
+
+## 8. Melhorando acessibilidade
+Para tornar a tabela mais semântica e melhorar a acessibilidade, pode-se informar o atributo `scope` nas tags `<th>`. Este atributo pode receber os seguintes valores:
+- `col` - escopo de coluna
+- `row` - escopo de linha
+- `colgroup` - escopo de agrupamento de coluna
+- `rowgroup` - escopo de agrupamento de linha
+
+```
+<thead>
+  <tr>
+    <tr>
+      <th rowspan="2"></th>
+      <th colspan="2" scope="colgroup">Loja 1</th>
+      <th colspan="2" scope="colgroup">Loja 2</th>
+    </tr>
+  </tr>
+  <tr>
+    <th scope="col">Produzidos</th>
+    <th scope="col">Vendidos</th>
+    <th scope="col">Produzidos</th>
+    <th scope="col">Vendidos</th>    
+  </tr>
+</thead>
+<tbody>
+  <tr>
+    <th scope="row">Produto 1</th>
+    ...
+  </tr>
+  <tr>
+    <th scope="row">Produto 2</th>
+    ...
+  </tr>
+</tbody>
+```
+
+***
+
+</details>
 
 [1]: https://developer.mozilla.org/pt-BR/docs/Web/HTML/Global_attributes
 [2]: https://code.visualstudio.com

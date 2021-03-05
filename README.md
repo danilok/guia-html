@@ -47,11 +47,11 @@
   8. [Melhorando acessibilidade](#8-Melhorando-acessibilidade)
 
 * Cabeçalho
-  1. Head
-  2. Meta
-  3. Favicon
-  4. Meta SEO
-  5. Meta Social
+  1. [Head](#1-head)
+  2. [Meta](#2-meta)
+  3. [Favicon](#3-favicon)
+  4. [Meta SEO](#4-meta-seo)
+  5. [Meta Social](#5-meta-social)
 
 -----------------------
 
@@ -83,11 +83,11 @@ Dicas para nomenclatura do arquivo:
 
 ## 3. O que é HTML
 
-HTML = Hypertext Markup Language ou linguage de marcação de hipertexto.
+HTML é o acrônimo de _Hypertext Markup Language_ ou linguagem de marcação de hipertexto.
 
 Não é uma linguagem de programação e sim de marcação (por conta das tags). Tem sua própria sintaxe e semântica.
 
-O hipertexto se refere a elementos além do texto escrito, como links, imagens, etc o que enriquece o documento html.
+O hipertexto se refere a elementos além do texto escrito, como links, imagens, etc o que enriquece o documento HTML.
 <br><br>
 
 ## 4. Comentários
@@ -635,9 +635,10 @@ O que ficou dentro do `<div>` ficou renderizado em linha, mas está em um bloco 
 Estas duas tags são bem utilizadas pois permitem customizar cada uma das tags com os atributos globais como `id`, `class`. São fundamentais para criação de páginas utilizando Javascript e CSS.
 ***
 </details>
+<br>
 
 <details open>
-  <summary>Links</summary>
+  <summary><strong>Links</strong></summary>
 <br>
 
 ## 1. Conhecendo a tag âncora
@@ -800,14 +801,14 @@ Atenção: em alguns computadores isso pode não funcionar, portanto, não se at
 
 ## 8. Resolução do exercício
 
-Resolvido na pasta `exercicio_links` deste repositório.
+Resolvido na pasta [`exercicio_links`][9] deste repositório.
 
   ***
 </details>
 <br>
 
 <details open>
-<summary>Tabelas</summary>
+<summary><strong>Tabelas</strong></summary>
 <br>
 
 ## 1. Tabelas
@@ -1149,6 +1150,144 @@ Para tornar a tabela mais semântica e melhorar a acessibilidade, pode-se inform
 ***
 
 </details>
+<br>
+
+<details open>
+<summary><strong>Cabeçalho</strong></summary>
+<br>
+
+## 1. Head
+
+O Head do cabeçalho não é exibido no navegador mas contém configurações das nossas páginas como:
+- título
+- charset
+- link para css
+- link para script (javascript)
+- metadados diversos
+  - SEO
+  - viewport
+
+<br>
+
+## 2. Meta
+
+A tag `<meta>` é importante e bastante utilizada para configurar uma página HTML. Com ela definimos metadados.  
+Esta tag pode ter diversos atributos, entre elas:
+- charset
+- name
+- content
+
+Alguns exemplos de utilização:
+```
+<meta charset="UTF-8">
+```
+Esta configuração define a codificação dos caracteres especiais.
+<br><br>
+
+```
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+```
+Com isso definimos a portabilidade para dispositivos móveis. O `viewport` é a parte visível do dispositivo.
+
+### Referência:
+- [Viewport Meta tag][7]
+
+<br>
+
+## 3. Favicon
+
+Favicon é aquele ícone que aparece ao lado do título da nossa página na aba do navegador. Para exibí-lo precisamos configurá-lo utilizando a tag `<link>` com o relacionamento (atributo `rel`) e informando a referência do ícone (atributo `href`).
+
+Exemplo:
+```
+<link rel="icon" href="/icon/meuicone.png">
+```
+
+Podem ser definidos mais de um ícone para ser mais condizente com o tipo de dispositivo que o usuário está utilizando para acessar sua página.
+
+### Referência:
+- [Favicon Generator][3]
+
+<br>
+
+## 4. Meta SEO
+
+SEO ou _Search Engine Optimization_ refere-se aos motores de busca que acessam as páginas para indexá-las em algum buscador como Google, Bing, etc.
+
+Alguns metadados são relevantes para os motores de busca como:
+```
+<meta name="author" content="Danilo">
+<meta name="description" content="Curso Estela de HTML">
+<meta name="robots" content="noindex,nofollow">
+<meta name="keywords" content="HTML, front-end">
+```
+
+O metadado `author` informa o autor da página. O metadado `description` define a descrição da sua página quando for exibida em alguma busca. 
+
+O metadado `robots` define o que um motor de busca deve fazer ao encontrar sua página. Alguns dos valores possíveis:
+- `index`: não indexar a página
+- `noindex`: não indexar a página
+- `nofollow`: não seguir os links da página
+- `follow`: seguir os links da página
+
+A configuração padrão dos robôs de busca é `index` e `follow`, ou seja, a página será indexada e os links serão seguidos.
+
+
+### Referência:
+- [META TAGS E SUA IMPORTÂNCIA PARA SEO][6]
+
+<br>
+
+
+## 5. Meta Social
+
+Alguns metadados que podemos utilizar para configurar uma página são bem relevantes para as redes sociais pois permitem torná-la bem mais informativa e interessante ao compartilhá-la em redes sociais.
+
+Existem empresas que criaram metadados (_api_) especiais para serem utilizadas em suas redes sociais como o _Open Graph_ criado pelo Facebook ou a API do Twitter.
+<br><br>
+
+Algumas metadados do Open Graph:
+```
+<meta property="og:image" content="url_da_imagem">
+<meta property="og:description" content="descricao do site">
+<meta property="og:title" content="titulo da página">
+<meta property="og:type" content="article">
+<meta property="og:url" content="http://www.example.com/">
+<meta property="og:site_name" content="Nome do site">
+<meta property="og:price:amount" content="29,90">
+<meta property="og:price:currency" content="R$">
+```
+Veja que no caso do _Open Graph_ foi utilizad o atributo `property`.
+<br><br>
+
+Do Twitter:
+```
+<meta name="twitter:title" content="titulo">
+```
+Já a _api_ do Twitter utilizou o atributo `name` para definir o metadado.
+
+### Referências:
+- [Open Graph][4]
+- [Twitter Cards][5]
+
+</details>
+
+***
+
+<br>
+
+O conteúdo deste `README` foi escrito utilizando [markdown][8] com algumas tags HTML, o que foi bem interessante.
+
+Agradecimentos ao @maykbrito e @Rocketseat! #neverstoplearning
+
+[Back to Top](#guia-estelar-de-html-da-Rocketseat)
 
 [1]: https://developer.mozilla.org/pt-BR/docs/Web/HTML/Global_attributes
 [2]: https://code.visualstudio.com
+[3]: https://favicon.io/favicon-generator/
+[4]: https://ogp.me
+[5]: https://developer.twitter.com/en/docs/twitter-for-websites/cards/overview/markup
+[6]: https://www.seomarketing.com.br/meta-tags-google.php
+[7]: https://developer.mozilla.org/en-US/docs/Web/HTML/Viewport_meta_tag
+[8]: https://daringfireball.net/projects/markdown/
+[9]: ./exercicio_links/index.html
